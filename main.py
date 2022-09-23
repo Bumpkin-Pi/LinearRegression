@@ -31,8 +31,10 @@ m = (
 )
 b = (Σy - (m * Σx)) / n
 
-plt.plot(list(range(0, 100)), [m * X + b for X in range(0, 100)], color="red")
-
+plt.plot(list(range(0, 100)), [m * X + b for X in range(0, 100)], color="red", label=f'y = {m}x + {b}')
+plt.ylabel('y')
+plt.xlabel('x')
+plt.legend()
 print(f'y = {m}x + {b}')
 
 plt.show()
