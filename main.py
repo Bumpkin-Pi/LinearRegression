@@ -16,24 +16,23 @@ n = len(data)
 for i in range(len(data)):
     Σx += data.iloc[i].x
     Σy += data.iloc[i].y
-    print(Σy)
+    #print(Σy)
     Σxy += data.iloc[i].x * data.iloc[i].y
     Σx2 += toPower(data.iloc[i].x, 2)
     plt.scatter([data.iloc[i].x], [data.iloc[i].y], color="black")
 
 
-print(f'Σx = {Σx}\nΣy = {Σy}\nΣxy = {Σxy}\nΣx2 = {Σx2}')
+#print(f'Σx = {Σx}\nΣy = {Σy}\nΣxy = {Σxy}\nΣx2 = {Σx2}')
 
-
+#Main functions
 m = (
         (n * Σxy - Σx * Σy) /
         (n * Σx2 - toPower(Σx, 2))
 )
-
 b = (Σy - (m * Σx)) / n
 
 plt.plot(list(range(0, 100)), [m * X + b for X in range(0, 100)], color="red")
-plt.show()
-
 
 print(f'y = {m}x + {b}')
+
+plt.show()
